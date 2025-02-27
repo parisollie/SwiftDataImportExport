@@ -74,3 +74,7 @@ struct DataView: View {
             }
     }
 }
+
+#Preview{
+    DataView()
+}
