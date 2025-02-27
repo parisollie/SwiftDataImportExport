@@ -1,4 +1,4 @@
-# Wiky Synthesizer App
+# Body mass calculator with weight and height App
 
 A new iOS project.
 
