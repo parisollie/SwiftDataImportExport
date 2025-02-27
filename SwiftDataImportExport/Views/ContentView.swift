@@ -8,21 +8,22 @@
 import SwiftUI
 import SwiftData
 struct ContentView: View {
-    //Vid 500
+    //V-500,paso 1.0, ponemos nuestras variables.
     @State private var nombre = ""
     @State private var altura = ""
     @State private var peso = ""
     @State private var resIMC = "Respuesta"
-    
+    //V-502,paso 2.6
     @Environment(\.modelContext) var context
     
-    //Vid 501
+    //paso 1.6
     func calcularIMC(peso:String, altura: String) -> String {
         var respuesta = ""
         if let pesoDouble = Double(peso),let alturaDouble = Double(altura), alturaDouble > 0 {
+            //Formula de masa corporal
             let imc = pesoDouble / ( alturaDouble * alturaDouble )
             respuesta = String(format: "IMC: %.2f", imc)
-            
+            //Paso 1.7
             if imc < 18.5 {
                 respuesta += " - Bajo peso"
             } else if imc < 24.9 {
@@ -32,15 +33,12 @@ struct ContentView: View {
             }else{
                 respuesta += " - Obesidad"
             }
-            
         }else{
             respuesta = "Ingresa valores correctos para altura y peso"
         }
-        
-        
         return respuesta
     }
-    //Vid 501
+    //V-501,paso 1.5, para limpiar
     func limpiar(){
         nombre = ""
         altura = ""
@@ -49,21 +47,24 @@ struct ContentView: View {
     }
     
     var body: some View {
-        //Vid 500
+        //Paso 1.1
         NavigationStack{
             VStack{
+                //Paso 1.3
                 Text(resIMC).font(.title).bold()
                 TextField("Nombre", text: $nombre)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Altura", text: $altura)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                   // .keyboardType(.numberPad)
+                // .keyboardType(.numberPad)
                 TextField("Peso", text: $peso)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    //.keyboardType(.numberPad)
+                //.keyboardType(.numberPad)
                 
+                //Paso 1.4
                 HStack{
                     Button(action: {
+                        //Paso 1.8
                         resIMC = calcularIMC(peso: peso, altura: altura)
                     }, label: {
                         Text("Calcular")
@@ -72,6 +73,7 @@ struct ContentView: View {
                         .tint(.green)
                     
                     Button(action: {
+                        //Paso 1.9
                         limpiar()
                     }, label: {
                         Text("Limpiar")
@@ -80,8 +82,9 @@ struct ContentView: View {
                         .tint(.red)
                     
                     Button(action: {
-                        //Vid 502
+                        //paso 2.7
                         context.insert(IMCModel(nombre: nombre, imc: resIMC))
+                        //para poder hacer uno nuevo.
                         limpiar()
                     }, label: {
                         Text("Guardar")
@@ -89,15 +92,18 @@ struct ContentView: View {
                     }).buttonStyle(.borderedProminent)
                         .tint(.blue)
                 }
+                //Para que empuje todo hacia arriba⬆️
                 Spacer()
-            }.navigationTitle("Calcular IMC")
-                .padding(.all)
-                .toolbar{
-                    //Vid 502
-                    NavigationLink(destination: DataView()){
-                        Image(systemName: "book.pages.fill")
-                    }
+            }
+            //Paso 1.2
+            .navigationTitle("Calcular IMC")
+            .padding(.all)
+            //Paso 2.8
+            .toolbar{
+                NavigationLink(destination: DataView()){
+                    Image(systemName: "book.pages.fill")
                 }
+            }
         }
     }
 }
