@@ -24,6 +24,9 @@ This application contains the following knowledge:
 
 - Files
 
+- Swift data
+  
+
 ## The aplication look like this :
 
 ![Simulator Screenshot - iPhone 16 - 2025-02-26 at 18 25 25](https://github.com/user-attachments/assets/8a74f4fa-65e7-4bb2-ad98-481250e9c7b2)
