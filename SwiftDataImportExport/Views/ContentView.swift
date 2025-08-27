@@ -3,7 +3,7 @@
 //  SwiftDataImportExport
 //
 //  Created by Paul F on 08/10/24.
-//  Actualizando
+//  Actualizandos jeje
 
 import SwiftUI
 import SwiftData
