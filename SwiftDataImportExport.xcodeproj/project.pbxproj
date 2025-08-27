@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		8A5E7BE32CB5EDD70094AE18 /* ExportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5E7BE22CB5EDD10094AE18 /* ExportModel.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		8A5E7BD02CB5ED400094AE18 /* SwiftDataImportExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataImportExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A5E7BE22CB5EDD10094AE18 /* ExportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,7 +45,6 @@
 		8A5E7BC72CB5ED400094AE18 = {
 			isa = PBXGroup;
 			children = (
-				8A5E7BE22CB5EDD10094AE18 /* ExportModel.swift */,
 				8A5E7BD22CB5ED400094AE18 /* SwiftDataImportExport */,
 				8A5E7BD12CB5ED400094AE18 /* Products */,
 			);
@@ -138,7 +132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A5E7BE32CB5EDD70094AE18 /* ExportModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
