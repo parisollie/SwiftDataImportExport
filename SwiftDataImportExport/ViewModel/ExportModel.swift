@@ -9,16 +9,16 @@ import Foundation
 import CoreTransferable
 import UniformTypeIdentifiers
 
-//V-503,paso 2.10
+//V-503,paso 3.0, EXPORTAR DATOS, los datos deben de venir de una structura
 struct ExportModel: Identifiable, Codable {
-    //los mismos modelos
+    // Deben ser los mismos datos
     var id: String
     var nombre: String
     var imc: String
 }
-//Paso 2.12
+//Paso 3.2
 struct Transactions: Codable, Transferable {
-    //Debe ser una estructura.
+    // Debe ser una estructura.
     var results: [ExportModel]
     static var transferRepresentation: some TransferRepresentation {
         CodableRepresentation(contentType: .extensionType)
@@ -26,7 +26,7 @@ struct Transactions: Codable, Transferable {
     }
 }
 
-//Paso 2.11
+//Paso 3.1
 extension UTType {
     //pegamos el identifier
     static var extensionType = UTType(exportedAs: "com.pjff.SwiftDataImportExport.jmb")

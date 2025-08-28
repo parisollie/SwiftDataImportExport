@@ -12,7 +12,7 @@ struct SwiftDataImportExportApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //V-502,paso 2.1
+            // Paso 2.1,ponemos el model
         }.modelContainer(for: IMCModel.self)
     }
 }

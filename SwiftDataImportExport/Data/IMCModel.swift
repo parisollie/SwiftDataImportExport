@@ -7,11 +7,13 @@
 
 import Foundation
 import SwiftData
-//V-502,paso 2.0 swfit data
+
+//V-502,paso 2.0 Swift data
 @Model
 final class IMCModel {
-    //Para que el atributo sea único.
+    // Para que el atributo sea único.
     @Attribute(.unique) var id : String
+    // Guardamos nombre y el peso.
     var nombre : String
     var imc : String
     
